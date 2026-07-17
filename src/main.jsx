@@ -25,7 +25,7 @@ const services = [
   {
     variant: "transfer",
     title: "產權移轉登記",
-    body: "以專業把關每一道移轉程序，守護每一次產權交付的安全與信任。",
+    body: "專業把關每一道移轉程序，守護每一次產權交付。",
   },
   {
     variant: "inheritance",
@@ -554,9 +554,14 @@ function App() {
 
       <footer className="site-footer">
         <div>
-          <strong>云川 地政士事務所</strong>
-          <p>鄭雅云 地政士 / 代書 / 電話：03-355-2366 / 地址：330桃園市桃園區水汴二路21號1F / Yunchuan Land Administration Office / Email：yycland.tw@gmail.com</p>
-          <p>開業執照字號：（115）桃市地字第000000號 / 等有字號再補上</p>
+          <div className="footer-office-name">
+            <strong>云川 地政士事務所</strong>
+            <span>Yunchuan Land Administration Office</span>
+          </div>
+          <p>鄭雅云 地政士 / 代書</p>
+          <p>電話：03-355-2366</p>
+          <p>地址：330桃園市桃園區水汴二路21號1F</p>
+          <p>Email：yycland.tw@gmail.com</p>
         </div>
         <a href="#home">回到頁首</a>
       </footer>
@@ -577,70 +582,13 @@ function SectionIntro({ id, kicker, title, body }) {
 }
 
 function ServiceIllustration({ variant }) {
-  const id = `service-${variant}`;
-
   return (
-    <svg className={`service-illustration service-illustration-${variant}`} viewBox="0 0 160 160" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id={`${id}-green`} x1="35" y1="28" x2="124" y2="132" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#83bd5d" />
-          <stop offset="1" stopColor="#2d7a55" />
-        </linearGradient>
-        <linearGradient id={`${id}-orange`} x1="40" y1="26" x2="120" y2="134" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#ffc84d" />
-          <stop offset="1" stopColor="#f08a1c" />
-        </linearGradient>
-        <linearGradient id={`${id}-blue`} x1="34" y1="28" x2="124" y2="132" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#8ccbe8" />
-          <stop offset="1" stopColor="#3b7898" />
-        </linearGradient>
-      </defs>
-      <circle cx="80" cy="80" r="68" fill="#ffffff" />
-      <circle cx="80" cy="80" r="56" fill="#f5f8f5" />
-
-      {variant === "transfer" && (
-        <>
-          <path d="M31 93c14 3 25 1 35-5 8-5 15-7 23-2 8 5 7 14-1 19l-16 9" fill="#ffd7c9" stroke="#c96f46" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M129 67c-14-3-25-1-35 5-8 5-15 7-23 2-8-5-7-14 1-19l16-9" fill="#ffd7c9" stroke="#c96f46" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-          <circle cx="80" cy="81" r="25" fill={`url(#${id}-orange)`} />
-          <path d="M80 60v43M69 72c3-8 21-8 22 3 1 8-8 10-15 12-10 3-10 13 0 15 7 2 15 0 18-7" fill="none" stroke="#ffffff" strokeWidth="7" strokeLinecap="round" />
-          <path d="m28 101 13 13M119 46l13 13" stroke="#8c3f10" strokeWidth="12" strokeLinecap="round" />
-        </>
-      )}
-
-      {variant === "inheritance" && (
-        <>
-          <circle cx="80" cy="80" r="39" fill="none" stroke={`url(#${id}-green)`} strokeWidth="7" />
-          <path d="m80 29-10 10 10 10M80 131l10-10-10-10" fill="none" stroke="#6a9c45" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-          <rect x="55" y="59" width="50" height="43" rx="7" fill={`url(#${id}-orange)`} />
-          <path d="M62 59c5-12 31-12 36 0" fill="none" stroke="#a86c24" strokeWidth="7" strokeLinecap="round" />
-          <circle cx="80" cy="80" r="10" fill="#f8df9a" />
-          <path d="M75 80h10M80 75v10" stroke="#6b7d48" strokeWidth="4" strokeLinecap="round" />
-        </>
-      )}
-
-      {variant === "gift" && (
-        <>
-          <path d="M58 116h56a9 9 0 0 0 9-9V58L99 34H58a9 9 0 0 0-9 9v64a9 9 0 0 0 9 9Z" fill="#ffffff" stroke="#7d8d86" strokeWidth="5" />
-          <path d="M99 34v26h24" fill="#e8eee9" stroke="#7d8d86" strokeWidth="5" strokeLinejoin="round" />
-          <path d="M69 69h33M69 85h33M69 101h26" stroke="#7aaa50" strokeWidth="5" strokeLinecap="round" />
-          <path d="m55 69 6 6 9-12M55 86l6 6 9-12M55 103l6 6 9-12" fill="none" stroke="#f4a222" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M56 43h24l-12-12Z" fill={`url(#${id}-orange)`} stroke="#be6e13" strokeWidth="3" />
-          <text x="68" y="42" textAnchor="middle" fill="#ffffff" fontSize="15" fontWeight="900">$</text>
-        </>
-      )}
-
-      {variant === "mortgage" && (
-        <>
-          <path d="M43 76h60v44H43Z" fill="#f49a2d" stroke="#b65d16" strokeWidth="5" strokeLinejoin="round" />
-          <path d="m36 78 37-35 37 35" fill="#ffffff" stroke="#b65d16" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M63 120V96h20v24" fill="#7f461f" />
-          <circle cx="112" cy="83" r="25" fill={`url(#${id}-orange)`} />
-          <path d="M112 63v39M101 75c3-7 20-7 21 2 1 7-7 9-13 11-9 3-8 11 0 13 7 2 13-1 16-6" fill="none" stroke="#ffffff" strokeWidth="6" strokeLinecap="round" />
-          <path d="M45 126c13-7 27-9 42-3 10 4 20 3 30-3" fill="none" stroke="#ffd7c9" strokeWidth="10" strokeLinecap="round" />
-        </>
-      )}
-    </svg>
+    <img
+      className={`service-illustration service-illustration-${variant}`}
+      src={`/service-${variant}.webp`}
+      alt=""
+      loading="lazy"
+    />
   );
 }
 

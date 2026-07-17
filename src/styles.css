@@ -418,6 +418,8 @@ h2 {
   display: block;
   width: 112px;
   height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 h3 {
@@ -932,6 +934,18 @@ td {
 .site-footer p {
   margin: 8px 0 0;
   color: #aebfba;
+}
+
+.footer-office-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+}
+
+.footer-office-name span {
+  color: #aebfba;
+  font-size: 0.92rem;
 }
 
 .site-footer a {

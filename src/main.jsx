@@ -313,12 +313,15 @@ function App() {
               我們以專業釐清法規、以細心守護權益，讓繁瑣的地政程序更簡單，陪伴每一位客戶安心完成每一次重要的資產規劃與傳承。
             </p>
             <div className="hero-actions">
-              <a className="primary-action" href="#contact">
-                預約諮詢
+              <a
+                className="primary-action"
+                href="https://line.me/R/ti/p/@613tgjsj"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="透過官方 LINE 預約諮詢，LINE ID @613tgjsj"
+              >
+                官方 LINE 預約諮詢
                 <ArrowRight size={18} aria-hidden="true" />
-              </a>
-              <a className="secondary-action" href="https://line.me/R/ti/p/@613tgjsj" target="_blank" rel="noreferrer">
-                官方LINE @613tgjsj
               </a>
             </div>
           </div>

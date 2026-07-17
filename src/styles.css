@@ -135,8 +135,8 @@ textarea {
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1fr);
-  gap: min(6vw, 64px);
+  grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1fr);
+  gap: min(7vw, 80px);
   align-items: center;
   min-height: min(84svh, 820px);
   padding: 76px 32px 104px;
@@ -213,8 +213,25 @@ h1 span {
   display: block;
 }
 
+h1 span:nth-child(1) {
+  letter-spacing: 0.04em;
+}
+
+h1 span:nth-child(2) {
+  margin-left: 0.62em;
+  color: #246b57;
+  font-size: 0.92em;
+}
+
+h1 span:nth-child(3) {
+  margin-left: 0.18em;
+  font-size: 0.86em;
+}
+
 .hero p:not(.eyebrow) {
-  max-width: 620px;
+  position: relative;
+  z-index: 2;
+  max-width: min(32rem, 100%);
   margin: 24px 0 0;
   color: #51635d;
   font-size: clamp(1rem, 2vw, 1.25rem);
@@ -1076,6 +1093,14 @@ td {
 
   h1 {
     font-size: clamp(2rem, 11vw, 3.2rem);
+  }
+
+  h1 span:nth-child(2) {
+    margin-left: 0.38em;
+  }
+
+  h1 span:nth-child(3) {
+    margin-left: 0.1em;
   }
 
   h2 {

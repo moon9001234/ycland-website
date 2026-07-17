@@ -7,6 +7,7 @@ import {
   ExternalLink,
   Landmark,
   Menu,
+  ShieldCheck,
   X,
 } from "lucide-react";
 import "./styles.css";

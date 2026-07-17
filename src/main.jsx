@@ -275,7 +275,7 @@ function App() {
             <Landmark size={22} aria-hidden="true" />
           </span>
           <span>
-            <strong>云川地政士/代書事務所</strong>
+            <strong>云川地政事務所</strong>
             <small>Yunchuan Land Administration Office</small>
           </span>
         </a>

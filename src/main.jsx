@@ -5,11 +5,8 @@ import {
   CheckCircle2,
   ChevronDown,
   ExternalLink,
-  Files,
-  Home,
   Landmark,
   Menu,
-  ShieldCheck,
   X,
 } from "lucide-react";
 import "./styles.css";
@@ -301,7 +298,7 @@ function App() {
             <Landmark size={22} aria-hidden="true" />
           </span>
           <span>
-            <strong>云川地政事務所</strong>
+            <strong>云川地政士/代書事務所</strong>
             <small>Yunchuan Land Administration Office</small>
           </span>
         </a>
@@ -334,7 +331,11 @@ function App() {
         <section id="home" className="hero" aria-labelledby="hero-title">
           <div className="hero-overlay" />
           <div className="hero-content">
-            <h1 id="hero-title">守護產權．傳承價值．安心託付</h1>
+            <h1 id="hero-title">
+              <span>守護產權</span>
+              <span>傳承價值</span>
+              <span>安心託付</span>
+            </h1>
             <p>
               我們以專業釐清法規、以細心守護權益，讓繁瑣的地政程序更簡單，陪伴每一位客戶安心完成每一次重要的資產規劃與傳承。
             </p>
@@ -351,21 +352,7 @@ function App() {
               </a>
             </div>
           </div>
-          <div className="hero-visual" aria-hidden="true">
-            <div className="hero-photo-orb" />
-            <div className="hero-photo-stack hero-stack-top" />
-            <div className="hero-photo-stack hero-stack-bottom" />
-            <div className="hero-stat-row">
-              <span><Files size={20} />流程清楚</span>
-              <span><ShieldCheck size={20} />權益安心</span>
-              <span><Home size={20} />產權規劃</span>
-            </div>
-            <div className="hero-accent-card">
-              <strong>登記</strong>
-              <span>稅務</span>
-              <small>文件</small>
-            </div>
-          </div>
+          <div className="hero-visual" aria-hidden="true" />
           <a className="scroll-cue" href="#services" aria-label="往下看服務內容">
             <ChevronDown size={24} aria-hidden="true" />
           </a>

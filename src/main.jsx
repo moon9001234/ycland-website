@@ -203,6 +203,7 @@ function App() {
   const [openFeeIds, setOpenFeeIds] = useState([]);
   const [openResourceIds, setOpenResourceIds] = useState([]);
   const [contactNotice, setContactNotice] = useState("");
+  const [contactSubmitting, setContactSubmitting] = useState(false);
 
   useEffect(() => {
     const sections = navItems
@@ -231,10 +232,11 @@ function App() {
       current.includes(id) ? current.filter((item) => item !== id) : [...current, id],
     );
   };
-  const handleContactSubmit = (event) => {
+  const handleContactSubmit = async (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
     const message = [
       "【網站預約諮詢】",
       `姓名：${formData.get("name") || "未填寫"}`,
@@ -264,7 +266,31 @@ function App() {
       return;
     }
 
-    window.open(lineUrl, "_blank", "noopener,noreferrer");
+    setContactSubmitting(true);
+    setContactNotice("正在安全送出諮詢資料…");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          contact: formData.get("contact"),
+          availableTime: formData.get("availableTime"),
+          message: formData.get("message"),
+          device: "電腦版",
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.ok) throw new Error("submit_failed");
+
+      form.reset();
+      setContactNotice("諮詢資料已送出，我們會儘快與您聯繫。");
+    } catch {
+      setContactNotice("目前無法送出，請稍後再試，或透過官方 LINE @613tgjsj 與我們聯繫。");
+    } finally {
+      setContactSubmitting(false);
+    }
   };
 
   return (
@@ -525,8 +551,8 @@ function App() {
               簡述您的需求
               <textarea name="message" rows="4" placeholder="簡述您的需求"></textarea>
             </label>
-            <button type="submit">
-              送出諮詢
+            <button type="submit" disabled={contactSubmitting}>
+              {contactSubmitting ? "送出中…" : "送出諮詢"}
               <CheckCircle2 size={18} aria-hidden="true" />
             </button>
             {contactNotice && (

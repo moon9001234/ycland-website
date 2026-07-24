@@ -210,11 +210,12 @@ p {
 }
 
 h1 {
-  margin: 0;
+  margin: 0 auto;
   max-width: 11ch;
-  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
   line-height: 1.02;
   letter-spacing: 0;
+  text-align: center;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
@@ -231,12 +232,12 @@ h1 span:nth-child(1) {
 }
 
 h1 span:nth-child(2) {
-  margin-left: 0.32em;
+  margin-left: 0;
   color: #246b57;
 }
 
 h1 span:nth-child(3) {
-  margin-left: 0.64em;
+  margin-left: 0;
 }
 
 .hero p:not(.eyebrow) {
@@ -1124,15 +1125,15 @@ td {
   }
 
   h1 {
-    font-size: clamp(2rem, 11vw, 3.2rem);
+    font-size: clamp(1.75rem, 9.5vw, 2.85rem);
   }
 
   h1 span:nth-child(2) {
-    margin-left: 0.22em;
+    margin-left: 0;
   }
 
   h1 span:nth-child(3) {
-    margin-left: 0.44em;
+    margin-left: 0;
   }
 
   h2 {

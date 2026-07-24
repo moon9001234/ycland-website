@@ -689,9 +689,23 @@ h3 {
 }
 
 .fee-notes p {
+  display: grid;
+  grid-template-columns: 1.25em minmax(0, 1fr);
+  column-gap: 0.25em;
+  align-items: start;
   margin: 0;
   color: var(--muted);
   line-height: 1.75;
+}
+
+.fee-notes p strong {
+  text-align: right;
+}
+
+.fee-notes p span {
+  min-width: 0;
+  text-align: justify;
+  text-justify: inter-character;
 }
 
 .table-card {

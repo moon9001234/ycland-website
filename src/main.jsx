@@ -452,7 +452,8 @@ function App() {
           <div className="fee-notes" aria-label="收費標準備註">
             {feeNotes.map((note, index) => (
               <p key={note}>
-                <strong>{index + 1}.</strong> {note}
+                <strong>{index + 1}.</strong>
+                <span>{note}</span>
               </p>
             ))}
           </div>

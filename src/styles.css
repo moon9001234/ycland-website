@@ -76,9 +76,16 @@ textarea {
   place-items: center;
   width: 42px;
   height: 42px;
+  overflow: hidden;
   border-radius: 8px;
-  color: #ffffff;
-  background: var(--green);
+  background: #eeeeef;
+}
+
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .brand strong,

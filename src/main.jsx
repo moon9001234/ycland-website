@@ -5,7 +5,6 @@ import {
   CheckCircle2,
   ChevronDown,
   ExternalLink,
-  Landmark,
   Menu,
   ShieldCheck,
   X,
@@ -296,7 +295,7 @@ function App() {
       <header className="site-header">
         <a className="brand" href="#home" onClick={closeMenu} aria-label="回到首頁">
           <span className="brand-mark">
-            <Landmark size={22} aria-hidden="true" />
+            <img src="/yunchuan-logo.webp" alt="" />
           </span>
           <span>
             <strong>云川地政士/代書事務所</strong>

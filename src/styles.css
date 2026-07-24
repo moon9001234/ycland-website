@@ -864,7 +864,7 @@ td {
   color: #ffffff;
   background:
     linear-gradient(90deg, rgba(13, 38, 32, 0.92) 0%, rgba(13, 38, 32, 0.72) 48%, rgba(13, 38, 32, 0.42) 100%),
-    url("/land-office-hero-v2.png") center / cover no-repeat;
+    url("/yunchuan-contact-hero.webp") center / cover no-repeat;
 }
 
 .contact-section::after {

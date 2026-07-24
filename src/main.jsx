@@ -506,6 +506,12 @@ function App() {
                                   <br className="mobile-only-break" />
                                   自用住宅優惠稅率：符合條件者（如一生一次、一生一屋），可大幅降至 10% 且不計累進倍數。
                                 </>
+                              ) : title === "行動自然人憑證" ? (
+                                <>
+                                  結合手機生物辨識，實現免插卡、
+                                  <br className="mobile-only-break" />
+                                  免輸密碼的數位身分驗證。
+                                </>
                               ) : (
                                 body
                               )}

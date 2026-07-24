@@ -367,6 +367,10 @@ h2 {
   line-height: 1.8;
 }
 
+.mobile-only-break {
+  display: none;
+}
+
 #services.section-wrap {
   padding-bottom: 34px;
 }
@@ -1179,6 +1183,15 @@ td {
   #fees .section-heading p {
     text-align: justify;
     text-justify: inter-character;
+  }
+
+  .resource-card > p {
+    text-align: justify;
+    text-justify: inter-character;
+  }
+
+  .mobile-only-break {
+    display: block;
   }
 
   .hero-actions {

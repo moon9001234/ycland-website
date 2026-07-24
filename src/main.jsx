@@ -493,7 +493,23 @@ function App() {
                               </span>
                               <strong>{title}</strong>
                             </a>
-                            <p>{body}</p>
+                            <p>
+                              {title === "桃園市地政e管家" ? (
+                                <>
+                                  案件查詢、資料查詢、線上申辦、
+                                  <br className="mobile-only-break" />
+                                  線上取號、AI輕鬆查
+                                </>
+                              ) : title === "土地增值稅" ? (
+                                <>
+                                  土地移轉時，買賣雙方應於土地買賣契約簽訂之日起30日內申報。
+                                  <br className="mobile-only-break" />
+                                  自用住宅優惠稅率：符合條件者（如一生一次、一生一屋），可大幅降至 10% 且不計累進倍數。
+                                </>
+                              ) : (
+                                body
+                              )}
+                            </p>
                             {relatedLinks && (
                               <div className="resource-related-links">
                                 {relatedLinks.map(([label, link]) => (

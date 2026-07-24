@@ -558,9 +558,10 @@ function App() {
             <span>Yunchuan Land Administration Office</span>
           </div>
           <p>鄭雅云 地政士 / 代書</p>
-          <p>電話：03-355-2366</p>
+          <p>電話：03-355-2366　傳真：03-355-8090</p>
           <p>地址：330桃園市桃園區水汴二路21號1F</p>
           <p>Email：yycland.tw@gmail.com</p>
+          <p>開業執照字號：（115）桃市地字第002651號</p>
         </div>
         <a href="#home">回到頁首</a>
       </footer>

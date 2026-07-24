@@ -663,15 +663,9 @@ h3 {
 .fee-table td:nth-child(2),
 .fee-table th:nth-child(2) {
   width: 20%;
+  padding-right: calc(50% - 2em);
   white-space: nowrap;
-}
-
-.fee-table td:nth-child(2) {
   text-align: right;
-}
-
-.fee-table th:nth-child(2) {
-  text-align: center;
 }
 
 .fee-table th:nth-child(3),

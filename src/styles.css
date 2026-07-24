@@ -177,14 +177,15 @@ textarea {
 }
 
 .hero-visual {
+  display: block;
   position: relative;
   z-index: 1;
-  min-height: 480px;
+  width: 100%;
+  height: auto;
   margin-right: max(0px, calc((100vw - 1180px) / 2));
   overflow: hidden;
   border: 1px solid rgba(211, 166, 76, 0.48);
   border-radius: 14px;
-  background: url("/land-office-hero-v2.png") center / cover no-repeat;
   box-shadow: 0 24px 54px rgba(4, 23, 18, 0.28);
 }
 
@@ -1002,7 +1003,6 @@ td {
 
   .hero-visual {
     width: min(560px, 100%);
-    min-height: 360px;
     margin: 0 auto;
   }
 
@@ -1150,10 +1150,6 @@ td {
   .service-card,
   .resource-card {
     min-height: auto;
-  }
-
-  .hero-visual {
-    min-height: 260px;
   }
 
   .service-grid {

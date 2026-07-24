@@ -352,7 +352,11 @@ function App() {
               </a>
             </div>
           </div>
-          <div className="hero-visual" aria-hidden="true" />
+          <img
+            className="hero-visual"
+            src="/yunchuan-brand-hero.webp"
+            alt="云川地政士事務所形象照：云以明理，川以承信"
+          />
           <a className="scroll-cue" href="#services" aria-label="往下看服務內容">
             <ChevronDown size={24} aria-hidden="true" />
           </a>

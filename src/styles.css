@@ -672,6 +672,10 @@ h3 {
   width: 50%;
 }
 
+.fee-table td:nth-child(3) {
+  white-space: pre-line;
+}
+
 .fee-notes {
   display: grid;
   gap: 10px;

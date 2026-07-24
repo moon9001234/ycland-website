@@ -657,14 +657,21 @@ h3 {
 
 .fee-table th:nth-child(1),
 .fee-table td:nth-child(1) {
-  width: 32%;
+  width: 30%;
 }
 
 .fee-table td:nth-child(2),
 .fee-table th:nth-child(2) {
-  width: 18%;
+  width: 20%;
   white-space: nowrap;
+}
+
+.fee-table td:nth-child(2) {
   text-align: right;
+}
+
+.fee-table th:nth-child(2) {
+  text-align: center;
 }
 
 .fee-table th:nth-child(3),

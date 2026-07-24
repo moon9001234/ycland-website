@@ -960,6 +960,16 @@ td {
   font-size: 0.92rem;
 }
 
+.footer-contact-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+
+.footer-contact-numbers span {
+  white-space: nowrap;
+}
+
 .site-footer a {
   align-self: start;
   color: #ffffff;
@@ -969,6 +979,11 @@ td {
 @media (max-width: 980px) {
   .site-header {
     padding: 0 18px;
+  }
+
+  .footer-contact-numbers {
+    display: grid;
+    gap: 8px;
   }
 
   .menu-button {

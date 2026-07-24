@@ -664,6 +664,7 @@ h3 {
 .fee-table th:nth-child(2) {
   width: 18%;
   white-space: nowrap;
+  text-align: right;
 }
 
 .fee-table th:nth-child(3),

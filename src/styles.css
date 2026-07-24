@@ -914,6 +914,11 @@ td {
   color: #ffffff;
 }
 
+.contact-section .section-heading p {
+  text-align: justify;
+  text-justify: inter-character;
+}
+
 .contact-form {
   position: relative;
   z-index: 1;
@@ -998,6 +1003,20 @@ td {
   align-self: start;
   color: #ffffff;
   font-weight: 800;
+}
+
+@media (min-width: 1200px) {
+  .contact-section {
+    grid-template-columns: minmax(0, 0.9fr) minmax(400px, 0.75fr) minmax(170px, 0.35fr);
+    background:
+      linear-gradient(90deg, rgba(13, 38, 32, 0.92) 0%, rgba(13, 38, 32, 0.72) 48%, rgba(13, 38, 32, 0.42) 100%),
+      url("/yunchuan-contact-hero.webp") center bottom / 100% auto no-repeat,
+      #0d2620;
+  }
+
+  .contact-form {
+    grid-column: 2;
+  }
 }
 
 @media (max-width: 980px) {

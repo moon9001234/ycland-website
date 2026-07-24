@@ -1175,6 +1175,12 @@ td {
     font-size: 2rem;
   }
 
+  #process .section-heading p,
+  #fees .section-heading p {
+    text-align: justify;
+    text-justify: inter-character;
+  }
+
   .hero-actions {
     display: grid;
   }

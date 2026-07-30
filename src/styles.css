@@ -1007,10 +1007,10 @@ td {
 
 @media (min-width: 1200px) {
   .contact-section {
-    grid-template-columns: minmax(0, 0.9fr) minmax(400px, 0.75fr) minmax(170px, 0.35fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(400px, 0.75fr) minmax(110px, 0.2fr);
     background:
       linear-gradient(90deg, rgba(13, 38, 32, 0.92) 0%, rgba(13, 38, 32, 0.72) 48%, rgba(13, 38, 32, 0.42) 100%),
-      url("/yunchuan-contact-hero-v2.png") center bottom / 100% auto no-repeat,
+      url("/yunchuan-contact-hero-desktop-v3.png") center bottom / 100% auto no-repeat,
       #0d2620;
   }
 

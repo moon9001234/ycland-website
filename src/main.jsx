@@ -230,24 +230,35 @@ function App() {
       current.includes(id) ? current.filter((item) => item !== id) : [...current, id],
     );
   };
-  const handleContactSubmit = (event) => {
+  const handleContactSubmit = async (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const message = [
-      "【網站預約諮詢】",
-      `姓名：${formData.get("name") || "未填寫"}`,
-      `聯絡方式：${formData.get("contact") || "未填寫"}`,
-      `方便聯繫時間：${formData.get("availableTime") || "未填寫"}`,
-      `需求摘要：${formData.get("message") || "未填寫"}`,
-      "來源：https://www.ycland.com.tw/",
-    ].join("\n");
-    const mailtoUrl = `mailto:ycland.tw@gmail.com?subject=${encodeURIComponent("網站預約諮詢")}&body=${encodeURIComponent(message)}`;
-
+    const form = event.currentTarget;
     setContactSubmitting(true);
-    setContactNotice("正在開啟您的電子郵件程式，請確認內容後寄出。");
-    window.location.assign(mailtoUrl);
-    window.setTimeout(() => setContactSubmitting(false), 800);
+    setContactNotice("正在安全送出諮詢資料…");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          contact: formData.get("contact"),
+          availableTime: formData.get("availableTime"),
+          message: formData.get("message"),
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || !result.ok) throw new Error("submit_failed");
+
+      form.reset();
+      setContactNotice("諮詢資料已送出，我們會儘快與您聯繫。");
+    } catch {
+      setContactNotice("目前無法送出，請稍後再試或直接來電聯繫。");
+    } finally {
+      setContactSubmitting(false);
+    }
   };
 
   return (

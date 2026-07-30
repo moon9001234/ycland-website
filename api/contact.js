@@ -25,7 +25,9 @@ export default async function handler(request, response) {
 
   const name = clean(request.body?.name, 100);
   const contact = clean(request.body?.contact, 150);
-  if (!name || !contact) {
+  const availableTime = clean(request.body?.availableTime, 150);
+  const message = clean(request.body?.message, 1000);
+  if (!name || !contact || !message) {
     return response.status(400).json({ ok: false, error: "missing_fields" });
   }
 
@@ -37,17 +39,19 @@ export default async function handler(request, response) {
         secret,
         name,
         contact,
-        availableTime: clean(request.body?.availableTime, 150),
-        message: clean(request.body?.message, 1000),
-        device: clean(request.body?.device, 50) || "電腦版",
+        availableTime,
+        message,
+        source: "https://www.ycland.com.tw/",
       }),
     });
     const result = await upstream.json();
     if (!upstream.ok || !result.ok) {
+      console.error("contact_storage_failed", result?.error || upstream.status);
       return response.status(502).json({ ok: false, error: "storage_failed" });
     }
     return response.status(200).json({ ok: true });
-  } catch {
+  } catch (error) {
+    console.error("contact_storage_unavailable", error);
     return response.status(502).json({ ok: false, error: "storage_unavailable" });
   }
 }

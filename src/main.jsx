@@ -230,11 +230,10 @@ function App() {
       current.includes(id) ? current.filter((item) => item !== id) : [...current, id],
     );
   };
-  const handleContactSubmit = async (event) => {
+  const handleContactSubmit = (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const form = event.currentTarget;
     const message = [
       "【網站預約諮詢】",
       `姓名：${formData.get("name") || "未填寫"}`,
@@ -243,52 +242,12 @@ function App() {
       `需求摘要：${formData.get("message") || "未填寫"}`,
       "來源：https://www.ycland.com.tw/",
     ].join("\n");
-    const lineUrl = `https://line.me/R/oaMessage/%40613tgjsj/?${encodeURIComponent(message)}`;
-
-    if (navigator.clipboard?.writeText) {
-      navigator.clipboard
-        .writeText(message)
-        .then(() => {
-          setContactNotice("已複製諮詢內容。如未自動開啟 LINE，請手動開啟官方 LINE 並貼上內容。");
-        })
-        .catch(() => {
-          setContactNotice("系統正在開啟 LINE。如未自動開啟，請手動加入官方 LINE @613tgjsj。");
-        });
-    } else {
-      setContactNotice("系統正在開啟 LINE。如未自動開啟，請手動加入官方 LINE @613tgjsj。");
-    }
-
-    const isMobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isMobileDevice) {
-      window.location.assign(lineUrl);
-      return;
-    }
+    const mailtoUrl = `mailto:ycland.tw@gmail.com?subject=${encodeURIComponent("網站預約諮詢")}&body=${encodeURIComponent(message)}`;
 
     setContactSubmitting(true);
-    setContactNotice("正在安全送出諮詢資料…");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.get("name"),
-          contact: formData.get("contact"),
-          availableTime: formData.get("availableTime"),
-          message: formData.get("message"),
-          device: "電腦版",
-        }),
-      });
-      const result = await response.json();
-      if (!response.ok || !result.ok) throw new Error("submit_failed");
-
-      form.reset();
-      setContactNotice("諮詢資料已送出，我們會儘快與您聯繫。");
-    } catch {
-      setContactNotice("目前無法送出，請稍後再試，或透過官方 LINE @613tgjsj 與我們聯繫。");
-    } finally {
-      setContactSubmitting(false);
-    }
+    setContactNotice("正在開啟您的電子郵件程式，請確認內容後寄出。");
+    window.location.assign(mailtoUrl);
+    window.setTimeout(() => setContactSubmitting(false), 800);
   };
 
   return (
@@ -375,7 +334,23 @@ function App() {
                 <ServiceIllustration variant={variant} />
               </div>
               <h3>{title}</h3>
-              <p>{body}</p>
+              <p>
+                {variant === "transfer" ? (
+                  <>
+                    專業把關每一道移轉程序，
+                    <br />
+                    守護每一次產權交付。
+                  </>
+                ) : variant === "inheritance" ? (
+                  <>
+                    協助釐清繼承程序與稅務節點，
+                    <br className="mobile-only-break" />
+                    順利完成產權承接與權益保障。
+                  </>
+                ) : (
+                  body
+                )}
+              </p>
             </article>
           ))}
         </section>

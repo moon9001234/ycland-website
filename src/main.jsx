@@ -334,7 +334,7 @@ function App() {
                 <ServiceIllustration variant={variant} />
               </div>
               <h3>{title}</h3>
-              <p className={variant === "gift" ? "service-copy-justify-desktop" : undefined}>
+              <p>
                 {variant === "transfer" ? (
                   <>
                     專業把關每一道移轉程序，
@@ -349,9 +349,9 @@ function App() {
                   </>
                 ) : variant === "gift" ? (
                   <>
-                    善用每年贈與免稅額及配偶
+                    規劃每年贈與免稅額，
                     <br />
-                    不課徵增值稅等措施，規劃贈與流程，兼顧資產配置與稅務效益。
+                    兼顧資產配置與稅務效益。
                   </>
                 ) : variant === "mortgage" ? (
                   <>

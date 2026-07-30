@@ -334,7 +334,7 @@ function App() {
                 <ServiceIllustration variant={variant} />
               </div>
               <h3>{title}</h3>
-              <p>
+              <p className={variant === "gift" ? "service-copy-justify-desktop" : undefined}>
                 {variant === "transfer" ? (
                   <>
                     專業把關每一道移轉程序，
@@ -346,6 +346,18 @@ function App() {
                     協助釐清繼承程序與稅務節點，
                     <br className="mobile-only-break" />
                     順利完成產權承接與權益保障。
+                  </>
+                ) : variant === "gift" ? (
+                  <>
+                    善用每年贈與免稅額及配偶
+                    <br />
+                    不課徵增值稅等措施，規劃贈與流程，兼顧資產配置與稅務效益。
+                  </>
+                ) : variant === "mortgage" ? (
+                  <>
+                    協助辦理抵押權設定與塗銷，
+                    <br />
+                    確保貸款及擔保權益。
                   </>
                 ) : (
                   body

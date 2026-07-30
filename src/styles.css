@@ -472,6 +472,15 @@ h3 {
   line-height: 1.65;
 }
 
+@media (min-width: 981px) {
+  .service-card p.service-copy-justify-desktop {
+    width: 14em;
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-character;
+  }
+}
+
 .band {
   background: var(--soft);
 }
